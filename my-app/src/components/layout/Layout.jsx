@@ -1,5 +1,5 @@
 import { cx } from "@emotion/css";
-
+import Navbar from "../navbar/Navbar";
 
 const Layout = (children, className) => {
     return (

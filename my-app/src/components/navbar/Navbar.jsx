@@ -1,6 +1,6 @@
-import { useAuthMessage } from "../authentication";
+import { cx, css } from "@emotion/css";
 import { Link, useLocation } from "react-router-dom";
-import { useAuthMessage } from "../authentication";
+import { useContextAuthManager } from "../../authentication";
 
 const navbarItem = [
     { title: "Home", path: "/" },
@@ -9,7 +9,7 @@ const navbarItem = [
 
 const Navbar = () => {
     // login required to be implemented
-    const { setLogin } = useAuthMessage();
+    const { setLogin } = useContextAuthManager();
     const location = useLocation();
 
     return (
@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className="flex w-full justify-between">
                 <div className="flex gap-x-4">
                     {navbarItem.map((item) => (
-                       <Link key={item.titile} to={item.path}>
+                       <Link key={item.title} to={item.path}>
                         <span
                             className={cx(
                                 location.pathname === item.path && "!text-while",
@@ -27,7 +27,7 @@ const Navbar = () => {
                                 `
                             )}
                         >
-                            {item.titile}
+                            {item.title}
                         </span>
                        </Link> 
                     ))}
