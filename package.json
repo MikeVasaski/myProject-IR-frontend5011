@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@emotion/css": "^11.10.5",
+    "axios": "^1.2.2"
+  }
+}
